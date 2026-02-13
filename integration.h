@@ -18,9 +18,9 @@
    Have everything in this structure that will be needed by the function integrate.
 */
 typedef struct{
-	char name[20]; /* Name of the quadrature formula. */
-	double *xk = malloc(sizeof(double));
-	double *wk = malloc(sizeof(double));/* (possible value: "left", "right", "middle", "trapezes", "simpson", "gauss2" or "gauss3") */
+	char name[20];
+	double x[20];
+	double w[20];/* (possible value: "left", "right", "middle", "trapezes", "simpson", "gauss2" or "gauss3") */
   /* Add here other paramaters to the structure definition, that you may need for the integral function */
 
 } QuadFormula;

@@ -22,21 +22,27 @@ void printQuadFormula(QuadFormula* qf)
 */
 double integrate(double (*f)(double), double a, double b, int N, QuadFormula* qf)
 {
-	double *xk = realloc(QuadFormula->xk,sizeof(double)*(N+1));
-	double *wk = realloc(QuadFormula->wk,sizeof(double)*(N+1));
+	double result = 0;
+	double *(xk) = qf->x;
+	double *(wk) = qf->w;
 	for(int i = 0; i < N + 1;i++)
 	{
-		xk[i] = a + i*(N /(b - a ));
+		xk[i] = 0.5 * i;
+		if(i%2 == 0)
+			wk[i] = 0.165;
+		else
+			wk[i] = 0.67;
+		printf("%f , %f\n",xk[i],wk[i]);
 	}
-	for(int i = 0; i < N + 1;i++)
+	double coef = 0;
+	for(int i = 0; i < N + 1; i++)
 	{
-		double wq' = 1;
-		for(int j = 0 ; j < N + 1 ; j++)
-		{
-			wq'= wq'*()
-		}
+		coef+= wk[i]*(*f)(a+xk[i]*(b-a));
+		printf("coef : %f\n",coef);
 	}
-	return 0.0;
+	result = (b - a)*coef;
+	
+	return result;
 }
 
 double integrate_dx(double (*f)(double), double a, double b, double dx, QuadFormula* qf)
