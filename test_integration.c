@@ -8,16 +8,21 @@
 /* Code here everything you need to test the integration methods and show your numericzal results */
 double f(double x)
 {
-	double result = 2*x;
+	double result = 15*x*sqrt((3*x)/2);
+	return result;
 }
 int main()
 {
 	double (*fun)(double) = &f;
 	double a = 0;
 	double b = 1;
-	int n = 1;
+	int n = 23;
+	char *na = "simpson";
+	printf("%f\n",(*fun)(2));
 	QuadFormula *k = malloc(sizeof(QuadFormula));
-	double result = integrate_dx(fun,a,b,n,k);
+	for(int i = 0 ; i < 7;i++)
+		k->name[i] = na[i];
+	double result = integrate(fun,a,b,n,k);
 	printf("%f\n",result);
 	return 0;
 }
