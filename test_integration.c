@@ -17,7 +17,7 @@ int main()
 	double b = 1;
 	int n = 1;
 	QuadFormula *k = malloc(sizeof(QuadFormula));
-	double result = integrate(fun,a,b,n,k);
+	double result = integrate_dx(fun,a,b,n,k);
 	printf("%f\n",result);
 	return 0;
 }

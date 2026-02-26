@@ -45,9 +45,34 @@ double integrate(double (*f)(double), double a, double b, int N, QuadFormula* qf
 	return result;
 }
 
+
+
 double integrate_dx(double (*f)(double), double a, double b, double dx, QuadFormula* qf)
 {
-  return 0.0;
+	double lon;
+	double aire;
+	if(strcmp(qf->name, "Methode 1") == 0){
+		lon = f(a);}
+	else if(strcmp(qf->name, "Methode 2") == 0){
+		lon = f(b);}
+	else if(strcmp(qf->name, "Méthode 3") == 0){
+		lon = f((a+b)/2);}
+	else if(strcmp(qf->name, "Methode 4") == 0){
+	        lon = f(a)/2 + f(b)/2;}
+	aire = (b-a) * lon;
+/*	double paires_subdivs[2];
+	double *subdivs[N];
+	double a_i;
+	double b_i;
+	for(int i = 0; i<N; i++){
+		a_i = a + i*(b-a)/N;
+		b_i = a + (i+1)*(b-a)/N;
+		if(b_i - a_i = (b-a)/N)
+			return -1;
+		paires_subdivs[0] = a_i;
+		paires_subdivs[1] = b_i;
+		subdivs[i] = paires_subdivs;
+	}*/
+	return 0.0;
 }
-
 
