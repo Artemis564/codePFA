@@ -13,7 +13,7 @@ integration.o: integration.c integration.h
 	$(CC) -c integration.c
 
 pfa: test_pfa.o pfa.o integration.o
-	$(CC) -o test_pfa $^ $(CFLAGS)
+	$(CC) -o test_pfa $^ -fsanitize=address,undefined -g $(CFLAGS)
 
 test_pfa.o: test_pfa.c pfa.h
 	$(CC) -c test_pfa.c

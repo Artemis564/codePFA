@@ -48,7 +48,6 @@ typedef struct{
 /* Global variables (only visible in pfa.c) for the integration computations */
 QuadFormula pfaQF;
 double pfa_dt;
-
 #else
 /* Initialize the integration variables.
    Arguments :
@@ -57,9 +56,10 @@ double pfa_dt;
    - dt : a positive value, which will be used to decide the number of subdivisions of an 
           interval [a,b], when computing the integration.
           The number of subdivisions will be N such that (b-a)/N ~ dt
-
    This functions sets the global variables pfaQF and pfa_dt to the values that you will use.
 */
+//pfaQF.name = strdup("simpson");
+//pfa_dt = 10;
 extern bool init_integration(char* quadrature, double dt);
 
 /* Normal distribution : density (phi) and cumulative distribution function (PHI) */
