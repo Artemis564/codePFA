@@ -18,11 +18,10 @@
    Have everything in this structure that will be needed by the function integrate.
 */
 typedef struct{
-	char name[20];
-	double x[20];
-	double w[20];/* (possible value: "left", "right", "middle", "trapezes", "simpson", "gauss2" or "gauss3") */
-  /* Add here other paramaters to the structure definition, that you may need for the integral function */
-
+    char name[20];
+    double x[3];
+    double w[3];
+    int n;
 } QuadFormula;
 
 #ifdef INTEGRATION_C
