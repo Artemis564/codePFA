@@ -4,20 +4,20 @@ int main()
 {
     init_integration("simpson",0.0001);
     Option opt;
-    opt.type=CALL;
+    opt.type=PUT;
     opt.S0=100;
-    opt.K=100;
-    opt.T=1;
+    opt.K=114;
+    opt.T=2;
     opt.mu=0.05;
-    opt.sig=0.2;
+    opt.sig=0.02;
     printf("Option price = %f\n",optionPrice(&opt));
-    double p[3]={0.7,0.2,0.1};
-    init_integration("trapezes",100);
+    double p[3]={0.9,0.05,0.05};
+    init_integration("left",1000);
     InsuredClient c;
-    c.m=6;
-    c.s=0.5;
+    c.m=1;
+    c.s=1;
     c.p=p;
-    for(int i = 100; i < 1001 ; i+=100)
+    for(int i = 0; i < 4 ; i++)
     {
     	printf("CDF S(%d) = %f\n",i,clientCDF_S(&c,i));
     }

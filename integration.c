@@ -98,7 +98,7 @@ double integrate(double (*f)(double), double a, double b, int N, QuadFormula* qf
 			result += (bi[j]-ai[j])*coef;
 		};
 	}
-
+	printf("%f\n",result);
 	return result;
 }
 
